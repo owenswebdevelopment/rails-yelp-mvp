@@ -1,0 +1,18 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://www.omnihotels.com/-/media/images/hotels/daldtn/restaurants/texas-spice/daldtn_texasspice_kathytran_img.jpg?h=660&iar=0&w=1170);">
+  <div class="container">
+    <h1>Eat from the <strong>best</strong> to <strong>fill your bellies</strong>!</h1>
+    <%= link_to "Add Restaurant", new_restaurant_path, class: 'text-decoration-none btn btn-success mt-3' %>
+  </div>
+</div>
+<div class="container m-5">
+  <h1>Restaurants</h1>
+  <%= link_to "Add new", new_restaurant_path, class: 'text-decoration-none text-white btn btn-primary m-4' %>
+  <div class="cards">
+    <% @restaurants.each do |restaurant| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+        <%= link_to restaurant.name, restaurant_path(restaurant), class: 'text-decoration-none text-white' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>

@@ -1,0 +1,37 @@
+<div class="container m-5">
+  <h1>Restaurants</h1>
+  <div class="card">
+    <div class="m-3">
+      <img src="restaurant.jpg" alt="image">
+      <h5><%= @restaurant.name %></h5>
+      <p><%= @restaurant.address %></p>
+      <p><%= @restaurant.phone_number %></p>
+      <p><%= @restaurant.category %></p>
+      <p>
+        <%= link_to restaurants_path, class: 'btn btn-success' do  %>
+          <i class="fa-solid fa-utensils"></i>
+        <% end %>
+      </p>
+      <ul class=" m-3 list-unstyled">
+        <p>
+          <% @restaurant.reviews.each do |review| %>
+            <li> <%= review.content %></li>
+            <li> <%= review.rating  %></li>
+          <% end %>
+        </p>
+      </ul>
+    </div>
+    <div class="m-2">
+      <%= link_to new_restaurant_review_path(@restaurant), class: 'btn btn-danger' do %>
+        <i class="fa-solid fa-pen-to-square"></i>
+        <span>Write Review</span>
+      <% end %>
+    </div>
+  </div>
+  <div class="container m-3">
+    <%= link_to restaurants_path(@restaurant), class: 'btn btn-danger' do %>
+      <i class="fa-solid fa-shop"></i>
+    <% end %>
+    <span>View Shops</span>
+  </div>
+</div>
